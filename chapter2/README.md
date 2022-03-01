@@ -50,3 +50,23 @@ sh-3.2# docker build -t kubia .
  
  
  해당 챕터의 루틴을 따라가고 싶다면 scr에 포함 된 shell을 실행할 것!
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <hr/>
+ 
+ 
+ 도커이미지 배포하기
+ 
+ 1. docker login 명령어로 docker에 로그인하기
+ 2. docker tag kubia <내 아이디>/kubia
+ 3. docker push <내 아이디>/kubia
+ 
+ 
+ 도커이미지 가져올떄
+ 
+ 1. docker pull <리파지토리 경로>
