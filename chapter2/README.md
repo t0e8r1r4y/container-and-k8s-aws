@@ -66,6 +66,8 @@ sh-3.2# docker build -t kubia .
  2. docker tag kubia <내 아이디>/kubia
  3. docker push <내 아이디>/kubia
  
+ ![스크린샷 2022-03-01 오후 1 04 30](https://user-images.githubusercontent.com/91730236/156102830-3af1c188-e41a-4336-bde3-17b4b6800f7e.png)
+
  
  도커이미지 가져올떄
  
