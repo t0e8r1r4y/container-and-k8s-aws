@@ -2,47 +2,37 @@
 
 ##### 도커 설치 -> macOS Mojave 10.14.4 -> docker version [Docker version 20.10.6]
 
+     간단한 node.js 애플리케이션 생성하고 실행 -> src 소스 참고
 
+     주의사항 : 반드시 docker가 실행 중에 있어야한다. 실행 중이지 않으면 docker build -t 명령을 실행해도 안됨. ( Error response from daemon: dial unix docker.raw.sock: connect: connection refused ) 데몬에서 정상적으로 응답을 받아주지 못한다. 그리고 반드시 sudo 권한을 부여해서 실행하도록 한다.
 
-##### 간단한 node.js 애플리케이션 생성하고 실행 -> src 소스 참고
+     소스설명 : 해당 소스는 9090 http 서버를 시작하고, 서버는 모든 요청에 대해서 상태코드 200과 You've hit <호스트 이름>의 텍스트를 콘솔에 출력한다.
 
-
-
-##### 주의사항 : 반드시 docker가 실행 중에 있어야한다. 실행 중이지 않으면 docker build -t 명령을 실행해도 안됨. ( Error response from daemon: dial unix docker.raw.sock: connect: connection refused ) 데몬에서 정상적으로 응답을 받아주지 못한다. 그리고 반드시 sudo 권한을 부여해서 실행하도록 한다.
-
-
-
-
-##### 소스설명 : 해당 소스는 9090 http 서버를 시작하고, 서버는 모든 요청에 대해서 상태코드 200과 You've hit <호스트 이름>의 텍스트를 콘솔에 출력한다.
-
-
-
-
-##### 소스실행 : 반드시 Dockerfile과 app.js가 한 경로에 있어야 한다.
+     소스실행 : 반드시 Dockerfile과 app.js가 한 경로에 있어야 한다.
 
 <hr/>
 
 로그는 아래와 같다. 최초 부팅 시 아래 로그가 뜨면서 node 이미지를 퍼블릭 리포지터리(도커 허브)에서 가져오는 작업을 진행한다.
 
-sh-3.2# docker build -t kubia .
+     sh-3.2# docker build -t kubia .
 
-[+] Building 109.8s (7/7) FINISHED
+     [+] Building 109.8s (7/7) FINISHED
 
- => [internal] load build definition from Dockerfile                    0.0s
+      => [internal] load build definition from Dockerfile                    0.0s
  
- => => transferring dockerfile: 100B                                    0.0s
+      => => transferring dockerfile: 100B                                    0.0s
  
- => [internal] load .dockerignore                                       0.0s
+      => [internal] load .dockerignore                                       0.0s
  
- => => transferring context: 2B                                         0.0s
+      => => transferring context: 2B                                         0.0s
  
- => [internal] load metadata for docker.io/library/node:7               4.2s
+      => [internal] load metadata for docker.io/library/node:7               4.2s
  
- => [internal] load build context                                       0.0s
+      => [internal] load build context                                       0.0s
  
- => => transferring context: 391B                                       0.0s
+      => => transferring context: 391B                                       0.0s
  
- (이하 중략)
+      (이하 중략)
  
  
  <hr/>
@@ -62,16 +52,16 @@ sh-3.2# docker build -t kubia .
  
  도커이미지 배포하기
  
- 1. docker login 명령어로 docker에 로그인하기
- 2. docker tag kubia <내 아이디>/kubia
- 3. docker push <내 아이디>/kubia
+      1. docker login 명령어로 docker에 로그인하기
+      2. docker tag kubia <내 아이디>/kubia
+      3. docker push <내 아이디>/kubia
  
- ![스크린샷 2022-03-01 오후 1 04 30](https://user-images.githubusercontent.com/91730236/156102830-3af1c188-e41a-4336-bde3-17b4b6800f7e.png)
+      ![스크린샷 2022-03-01 오후 1 04 30](https://user-images.githubusercontent.com/91730236/156102830-3af1c188-e41a-4336-bde3-17b4b6800f7e.png)
 
  
  도커이미지 가져올떄
  
- 1. docker pull <리파지토리 경로>
+      1. docker pull <리파지토리 경로>
 
 
 
@@ -84,28 +74,28 @@ sh-3.2# docker build -t kubia .
 
 쿠버네티스 설치 -> macOS에서는 brew로 인스톨 후 아래 명령어로 실행 종료
 
-시작 : minikube start —vm-driver=hyperkit
-종료 : minikube stop
+    시작 : minikube start —vm-driver=hyperkit
+    종료 : minikube stop
 
 시작하면 아래와 같이 로그가 발생함
 
-😄  Darwin 10.14.4 의 minikube v1.23.2
+    😄  Darwin 10.14.4 의 minikube v1.23.2
 
-✨  기존 프로필에 기반하여 hyperkit 드라이버를 사용하는 중
+    ✨  기존 프로필에 기반하여 hyperkit 드라이버를 사용하는 중
 
-👍  minikube 클러스터의 minikube 컨트롤 플레인 노드를 시작하는 중
+    👍  minikube 클러스터의 minikube 컨트롤 플레인 노드를 시작하는 중
 
-🔄  Restarting existing hyperkit VM for "minikube" ...
+    🔄  Restarting existing hyperkit VM for "minikube" ...
 
-🐳  쿠버네티스 v1.22.2 을 Docker 20.10.8 런타임으로 설치하는 중
+    🐳  쿠버네티스 v1.22.2 을 Docker 20.10.8 런타임으로 설치하는 중
 
-🔎  Kubernetes 구성 요소를 확인...
+    🔎  Kubernetes 구성 요소를 확인...
 
     ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
     
-🌟  애드온 활성화 : default-storageclass, storage-provisioner
+    🌟  애드온 활성화 : default-storageclass, storage-provisioner
 
-🏄  끝났습니다! kubectl이 "minikube" 클러스터와 "default" 네임스페이스를 기본적으로 사용하도록 구성되었습니다.
+    🏄  끝났습니다! kubectl이 "minikube" 클러스터와 "default" 네임스페이스를 기본적으로 사용하도록 구성되었습니다.
 
 
 
@@ -116,8 +106,114 @@ sh-3.2# docker build -t kubia .
 
 kubectl run kubia --image=terryakishin/kubia --port=9090
 
-"kubectl get pods" cmd's log is below
+     "kubectl get pods" cmd's log is below
 
-NAME    READY   STATUS              RESTARTS   AGE
+     NAME    READY   STATUS              RESTARTS   AGE
 
-kubia   0/1     ContainerCreating   0          31s
+     kubia   0/1     ContainerCreating   0          31s
+     
+     
+     
+     
+     kubectl describe pods
+     Name:         kubia
+     Namespace:    default
+     Priority:     0
+     Node:         minikube/<localhost>
+     Start Time:   Tue, 01 Mar 2022 13:20:43 +0900
+     Labels:       run=kubia
+     Annotations:  <none>
+     Status:       Pending
+     IP:
+     IPs:          <none>
+     Containers:
+       kubia:
+         Container ID:
+         Image:          <도커허브아이디>/kubia
+         Image ID:
+         Port:           9090/TCP
+         Host Port:      0/TCP
+         State:          Waiting
+           Reason:       ContainerCreating
+         Ready:          False
+         Restart Count:  0
+         Environment:    <none>
+         Mounts:
+           /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-bcfsf (ro)
+     Conditions:
+       Type              Status
+       Initialized       True
+       Ready             False
+       ContainersReady   False
+       PodScheduled      True
+     Volumes:
+       kube-api-access-bcfsf:
+         Type:                    Projected (a volume that contains injected data from multiple sources)
+         TokenExpirationSeconds:  3607
+         ConfigMapName:           kube-root-ca.crt
+         ConfigMapOptional:       <nil>
+         DownwardAPI:             true
+     QoS Class:                   BestEffort
+     Node-Selectors:              <none>
+     Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                                  node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+     Events:
+       Type    Reason     Age   From               Message
+       ----    ------     ----  ----               -------
+       Normal  Scheduled  10m   default-scheduler  Successfully assigned default/kubia to minikube
+       Normal  Pulling    10m   kubelet            Pulling image "<내도커허드아이디>/kubia"
+     TerryAkiui-MBP:docker_test terryakishin$ kubectl describe pods
+     Name:         kubia
+     Namespace:    default
+     Priority:     0
+     Node:         minikube/<localhost>
+     Start Time:   Tue, 01 Mar 2022 13:20:43 +0900
+     Labels:       run=kubia
+     Annotations:  <none>
+     Status:       Running
+     IP:           <IP>
+     IPs:
+       IP:  <IP>
+     Containers:
+       kubia:
+         Container ID:   
+         Image:          
+         Image ID:       
+         Port:           9090/TCP
+         Host Port:      0/TCP
+         State:          Running
+           Started:      Tue, 01 Mar 2022 13:33:33 +0900
+         Ready:          True
+         Restart Count:  0
+         Environment:    <none>
+         Mounts:
+           /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-bcfsf (ro)
+     Conditions:
+       Type              Status
+       Initialized       True
+       Ready             True
+       ContainersReady   True
+       PodScheduled      True
+     Volumes:
+       kube-api-access-bcfsf:
+         Type:                    Projected (a volume that contains injected data from multiple sources)
+         TokenExpirationSeconds:  3607
+         ConfigMapName:           kube-root-ca.crt
+         ConfigMapOptional:       <nil>
+         DownwardAPI:             true
+     QoS Class:                   BestEffort
+     Node-Selectors:              <none>
+     Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                                  node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+     Events:
+       Type    Reason     Age    From               Message
+       ----    ------     ----   ----               -------
+       Normal  Scheduled  20m    default-scheduler  Successfully assigned default/kubia to minikube
+       Normal  Pulling    20m    kubelet            Pulling image "<내도커아이디>/kubia"
+       Normal  Pulled     7m50s  kubelet            Successfully pulled image "<내도커아이디>/kubia" in 12m49.381475469s
+       Normal  Created    7m50s  kubelet            Created container kubia
+       Normal  Started    7m50s  kubelet            Started container kubia
+
+     kubectl get pods
+     NAME    READY   STATUS    RESTARTS   AGE
+     kubia   1/1     Running   0          20m
