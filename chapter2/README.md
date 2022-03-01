@@ -217,3 +217,8 @@ kubectl run kubia --image=terryakishin/kubia --port=9090
      kubectl get pods
      NAME    READY   STATUS    RESTARTS   AGE
      kubia   1/1     Running   0          20m
+
+
+배포한 서비스 접근하기
+
+minikube를 사용하는 경우 minikube service kubia-http를 실행해 서비스에 접근 가능한 IP와 포트를 할당 받을 수 있음.
