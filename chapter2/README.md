@@ -72,3 +72,52 @@ sh-3.2# docker build -t kubia .
  도커이미지 가져올떄
  
  1. docker pull <리파지토리 경로>
+
+
+
+
+
+
+
+
+<hr/>
+
+쿠버네티스 설치 -> macOS에서는 brew로 인스톨 후 아래 명령어로 실행 종료
+
+시작 : minikube start —vm-driver=hyperkit
+종료 : minikube stop
+
+시작하면 아래와 같이 로그가 발생함
+
+😄  Darwin 10.14.4 의 minikube v1.23.2
+
+✨  기존 프로필에 기반하여 hyperkit 드라이버를 사용하는 중
+
+👍  minikube 클러스터의 minikube 컨트롤 플레인 노드를 시작하는 중
+
+🔄  Restarting existing hyperkit VM for "minikube" ...
+
+🐳  쿠버네티스 v1.22.2 을 Docker 20.10.8 런타임으로 설치하는 중
+
+🔎  Kubernetes 구성 요소를 확인...
+
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+    
+🌟  애드온 활성화 : default-storageclass, storage-provisioner
+
+🏄  끝났습니다! kubectl이 "minikube" 클러스터와 "default" 네임스페이스를 기본적으로 사용하도록 구성되었습니다.
+
+
+
+
+
+아까만든 이미지 실행
+
+
+kubectl run kubia --image=terryakishin/kubia --port=9090
+
+"kubectl get pods" cmd's log is below
+
+NAME    READY   STATUS              RESTARTS   AGE
+
+kubia   0/1     ContainerCreating   0          31s
