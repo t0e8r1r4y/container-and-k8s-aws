@@ -85,4 +85,21 @@
      
 2. create 명령으로 파드 생성하기
 
-           
+       kubectl create -f kubia-manual.yaml
+       kubectl get po kubia-manual -o yaml
+       kubectl get po kubia-manual -o json
+       docker logs <container id>
+       kubectl logs kubia-manual
+       kubectl logs kubia-manual -c kubia
+     
+3. 파드 - 포트포워딩
+
+       kubectl port-forward kubia-manual 9999:9090
+       
+       Forwarding from 127.0.0.1:9999 -> 9090
+       Forwarding from [::1]:9999 -> 9090
+       
+       외부에서 curl localhost:9999로 연결을 시도하면 아래 로그가 발생함
+       Handling connection for 9999
+          
+       
