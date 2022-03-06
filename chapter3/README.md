@@ -238,3 +238,7 @@
 - kubectl explain 명령을 통해서 쿠버네티스 리소스 정보를 빠르게 찾을 수 있다.
        
        
+
+------------------------
+참고 사이트
+- https://kubernetes.io/ko/docs/concepts/overview/working-with-objects/kubernetes-objects/
