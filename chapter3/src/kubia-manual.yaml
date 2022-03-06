@@ -4,7 +4,7 @@ metadata:
   name: kubia-manual            # 파드 이름
 spec:
   containers:
-    - image:                    # 컨테이너를 만드는 컨테이너 이미지
+    - image:                    # 컨테이너를 만드는 컨테이너 이미지 -> 실행하는 이미지를 넣고 실행해야 된다.
       name: kubia               # 컨테이너 이름
       ports:
       - containerPort: 9090     # 애플리케이션을 수신하는 포트
