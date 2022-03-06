@@ -242,3 +242,4 @@
 ------------------------
 참고 사이트
 - https://kubernetes.io/ko/docs/concepts/overview/working-with-objects/kubernetes-objects/
+- https://www.educative.io/edpresso/how-to-create-pods-in-kubernetes
