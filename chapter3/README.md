@@ -115,3 +115,29 @@
        rel : 파드에서 실행 중인 애플리케이션이 statble, beta 혹은 카나리 릴리스인지 보여준다.
        
        kubia-manual-with-labels.yaml 파일을 실행해본다. ( scr 포함 )
+       
+       
+       
+       kubectl create -f kubia-manual-with-labels.yaml
+       kubectl get pods --show-labels
+       
+       
+       기존 파드 레이블 수정
+       
+          kubectl get pods --show-labels
+          
+          NAME              READY   STATUS    RESTARTS   AGE   LABELS
+          kubia-manual      1/1     Running   0          21m   <none>
+          kubia-manual-v2   1/1     Running   0          49s   creation_method=manual,env=prod
+          
+          kubectl label po kubia-manual creation_mothod=manual
+          pod/kubia-manual labeled
+          
+          kubectl label po kubia-manual-v2 env=debug --overwrite
+          pod/kubia-manual-v2 labeled
+          
+          kubectl get po -L creation_method,env
+          NAME              READY   STATUS    RESTARTS   AGE    CREATION_METHOD   ENV
+          kubia-manual      1/1     Running   0          25m
+          kubia-manual-v2   1/1     Running   0          5m3s   manual            debug
+   
