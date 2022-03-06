@@ -141,3 +141,23 @@
           kubia-manual      1/1     Running   0          25m
           kubia-manual-v2   1/1     Running   0          5m3s   manual            debug
    
+4. 레이블 셀렉터를 이용한 파드 부분 집합 나열
+
+       리소스를 조회하면서 레이블 셀렉터를 사용하여 레이블을 조회 할 수 있다.
+       레이블 셀렉터는 특정 레이블로 태그된 파드의 부분 집합을 선택해 원하는 작업을 수행한다.
+       레이블 셀렉터는 아래 기준으로 리소스를 선택한다.
+          - 특정한 키를 포함하거나 포함하지 않는 레이블
+          - 특정한 키와 값을 가진 레이블
+          - 특정한 키를 갖고 있지만, 다른 값을 가진 레이블
+  
+  
+       레이블 셀렉터를 사용해 파드 나열 -> kubectl get po -l creation_method=manual
+       
+       kubectl get po -l env   -> env 레이블을 가지고 있지만, 값은 무엇이든 상관없는 파드를 보기위한 조회 명령
+       kubectl get po -l '!env'-> env를 가지고 있지 않은 파드
+       -> ''로 감싸 배시 셸이 느낌표를 처리하지 않도록 한다.
+       kubectl get po -l creation_method!=manual -> creation_method 레이블을 가지고 있는 파드 중에 manual이 아닌 것
+       kubectl get po -l env in (prod,devel) -> env 레이블 값이 prod 또는 devel로 설정되어 있는 파드
+       kubectl get po -l env notion (prod,devel) -> env 레이블 값이 prod 또는  devel이 아닌 파드
+       
+       
