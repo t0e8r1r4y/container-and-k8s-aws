@@ -94,6 +94,9 @@
      
 3. 파드 - 포트포워딩
 
+![port_fowarding drawio](https://user-images.githubusercontent.com/91730236/156922176-47cd5166-a9a5-4049-b8c7-96aa18ff2f84.png)
+
+
        kubectl port-forward kubia-manual 9999:9090
        
        Forwarding from 127.0.0.1:9999 -> 9090
