@@ -73,7 +73,26 @@
     레플리케이션 생성 예제
     - scr 추가
     - 컨트롤러가 삭제 된 파드를 재 생성하는 것은 삭제에 대한 대응이 아니라 부족한 파드 수에 대한 대응임. ( 삭제에 대한 통지는 API 서버가 수신하기는 함 )
-    - 장애를 만들어 보고 싶으면 네트워크 접속을 끊었다 붙였다 해보면 되는데... 예제 따라 가볼 것.
+            
+            kubectl create -f kubia-rc.yaml
+            replicationcontroller/kubia created
+            
+            kubectl get pod
+            NAME              READY   STATUS              RESTARTS      AGE
+            kubia-hb2zr       0/1     ContainerCreating   0             13s
+            kubia-manual-v2   1/1     Running             2 (27m ago)   2d1h
+            kubia-pbql5       1/1     Running             0             13s
+            kubia-rhjzt       1/1     Running             0             13s
+            
+            kube terryakishin$ kubectl delete pod kubia-pbql5
+            pod "kubia-pbql5" deleted
+            
+            kubectl get pod
+            NAME              READY   STATUS    RESTARTS      AGE
+            kubia-5mjgr       1/1     Running   0             66s
+            kubia-hb2zr       1/1     Running   0             2m45s
+            kubia-manual-v2   1/1     Running   2 (29m ago)   2d2h
+            kubia-rhjzt       1/1     Running   0             2m45s
 
 
      레플리케이션컨트롤러의 범위 안팎으로 파드 이동
