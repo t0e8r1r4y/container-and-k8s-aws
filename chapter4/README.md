@@ -127,18 +127,52 @@
      
      수평 파드 스케일링
      - 레플리케이션컨트롤러 리소스의 replicas 필드 값을 변경하기만 하면 됨
+     - kubectl scale rc kubia --replicas=10
+
+            kube terryakishin$ kubectl get pods
+            NAME              READY   STATUS    RESTARTS      AGE
+            kubia-5mjgr       1/1     Running   0             7m29s
+            kubia-hb2zr       1/1     Running   0             9m8s
+            kubia-hhpdq       1/1     Running   0             39s
+            kubia-hnr9h       1/1     Running   0             39s
+            kubia-manual-v2   1/1     Running   2 (36m ago)   2d2h
+            kubia-nw65q       1/1     Running   0             39s
+            kubia-p2wsc       1/1     Running   0             39s
+            kubia-plvkx       1/1     Running   0             39s
+            kubia-ptmtf       1/1     Running   0             3m10s
+            kubia-rhjzt       1/1     Running   0             9m8s
+            kubia-rvvln       1/1     Running   0             39s
+            kubia-swnxx       1/1     Running   0             39s
+            
+            kube terryakishin$ kubectl scale rc kubia --replicas=2
+            replicationcontroller/kubia scaled
+            
+            kube terryakishin$ kubectl get pods
+            NAME              READY   STATUS        RESTARTS      AGE
+            kubia-5mjgr       1/1     Running       0             8m14s
+            kubia-hb2zr       1/1     Running       0             9m53s
+            kubia-hhpdq       1/1     Terminating   0             84s
+            kubia-hnr9h       1/1     Terminating   0             84s
+            kubia-manual-v2   1/1     Running       2 (37m ago)   2d2h
+            kubia-nw65q       1/1     Terminating   0             84s
+            kubia-p2wsc       1/1     Terminating   0             84s
+            kubia-plvkx       1/1     Terminating   0             84s
+            kubia-ptmtf       1/1     Terminating   0             3m55s
+            kubia-rhjzt       1/1     Running       0             9m53s
+            kubia-rvvln       1/1     Terminating   0             84s
+            kubia-swnxx       1/1     Terminating   0             84s
 
 
      레플리케이션컨트롤러 삭제
      - 레플리케이션컨트롤러를 삭제하면 파드도 삭제. 그러마 rc만 삭제하고 pod는 실행 상태로 둘 수 있음
-     - 
+     - kubectl delete rc kubia --cascade=fals <- 이 옵션을 줘야함
 
 
 3. 레플리케이션컨트롤러(초기) VS 레플리카셋(이후)
 
      레플리카셋
      - rc에 비해서 표현식이 풍부함 -> 특정 레이블이 없는 파드나 레이블의 값과 상관없이 특정 레이블의 키를 갖는 파드를 매칭 시킬 수 있음.
-     - 실습
+     - 
 
 
 4. 데몬셋의 사용
