@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod                         # pod -> Pod 수정
+metadata:
+  name: kubia-liveness
+spec:
+  containers:
+  - image: luksa/kubia-unhealthy
+    name: kubia
+    livenessProbe:
+      httpGet:
+        path: /                     # 도서에서 해당 부분 들여쓰기 틀림
+        port: 8080
