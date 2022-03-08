@@ -14,8 +14,11 @@
         - 상태코드가 0이면 probe success. 모든 다른 코드는 실패로 간주함
 
 
-
-     생성방법
+     생성방법 -> scr -> kubia-liveness-probe.yaml 파일 실행
+          kubectl describe po kubia-liveness 입력
+          출력 로그에서
+          Liveness:       http-get http://:8080/ delay=0s timeout=1s period=10s #success=1 #failure=3   
+          책과 다르게 한번에 잘 실행 됨....
      
      동작상태 확인
      
