@@ -99,7 +99,26 @@
      - 레플리케이션컨트롤러가 생성한 파드는 어떤 식으로든 이 레플리케이션 컨트롤러와 묶이지 않는다.
      - 레플리케이션 컨트롤러는 레이블 셀렉터오 ㅏ일치하는 파드만을 관리함
      - 파드의 레이블을 변경하면 레플리케이션컨트롤러의 범위에서 제거되거나 추가될 수 있다. 한 레플리케이션컨트롤러에서 다른 레플리케이션 컨트롤러로 이동도 가능함
-     - 실습 정리
+            
+            kubectl label pod kubia-rhjzt app=foo --overwrite
+            pod/kubia-rhjzt labeled
+            
+            kube terryakishin$ kubectl get pod
+            NAME              READY   STATUS              RESTARTS      AGE
+            kubia-5mjgr       1/1     Running             0             4m23s
+            kubia-hb2zr       1/1     Running             0             6m2s
+            kubia-manual-v2   1/1     Running             2 (33m ago)   2d2h
+            kubia-ptmtf       0/1     ContainerCreating   0             4s
+            kubia-rhjzt       1/1     Running             0             6m2s
+            
+            kube terryakishin$ kubectl get pods -L app
+            NAME              READY   STATUS    RESTARTS      AGE     APP
+            kubia-5mjgr       1/1     Running   0             4m32s   kubia
+            kubia-hb2zr       1/1     Running   0             6m11s   kubia
+            kubia-manual-v2   1/1     Running   2 (33m ago)   2d2h
+            kubia-ptmtf       1/1     Running   0             13s     kubia
+            kubia-rhjzt       1/1     Running   0             6m11s   foo     <- rc의 관리대상이 아닌 pod
+            
      - 컨트롤러에서 파드를 제거 -> 특정 파드에 어떤 작업을 하려는 경우 해당 파드를 레플리케이션컨트롤러의 범위에서 제거하면 작업이 훨씬 간단함. 특히 장애가 발생했을 때 빼내서 따로 디버깅하면 편함
      - 레이블 셀렉터 변경
 
