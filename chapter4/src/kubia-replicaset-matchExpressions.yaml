@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: kubia
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In # 레이블의 값이 지정된 값 중 하나와 일치해야 한다. NotIn은 비일치 Exists는 파드가 지정된 키를 가진 레이블이 포함되어야 함
+        values:
+          -kubia
+  template:
+    metadata:
+      labels:
+        app: kubia
+    spec:
+      containers:
+      - name: kubia
+        image: terryakishin/kubia
