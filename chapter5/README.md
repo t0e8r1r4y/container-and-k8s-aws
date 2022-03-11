@@ -179,7 +179,7 @@
   인그레스란? 들어가거나 들어가는 행위. 들어갈 권리. 들어갈 수단이나 장소, 진입로  
   인그레스가 필요한 이유 -> 인그레스 하나로 수십 개의 서비스에 접근이 가능하도록 지원. 인그레스는 네트워크 스택의 애플리케이션 계층(HTTP)에서 작동함 서비스가 할 수 없는 쿠키 기반 세션 어피니티 등과 같은 기능 제공
        
-![kube_service drawio (6)](https://user-images.githubusercontent.com/91730236/157897385-ff1e1e38-a54d-4f53-aaf5-648d3e093650.png)
+![스크린샷 2022-03-12 오전 7 50 14](https://user-images.githubusercontent.com/91730236/157984966-1f1caf12-4c9d-4a5b-be9f-77c70530ed97.png)
 
 
               minikube addons enable ingress
