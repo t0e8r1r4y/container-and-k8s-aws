@@ -52,7 +52,52 @@
        
        서비스의 세션 어피니티 구성 : 특정 클라이언트의 모든 요청을 매번 같은 파드로 리디렉션 하려면 spec: 속성에서 sessionAffinity: ClientIP라고 설정
        동일한 서비스에서 여러 개의 포트 노출 : 여러 포트가 있는 서비스를 만들 때는 각 포트의 이름을 지정해야 한다. 
-       이름이 지정된 포트를 사용할 수 있다.
+       이름이 지정된 포트를 사용할 수 있다. -> src 에서 ~muilt.yaml 실행하고 위 방식으로 테스트
+       
+       
+       서비스 검색 방법 ( 요부분 조금 더 이해를 할 필요가 있다 )
+       - 환경변수를 통한 서비스 검색 kubectl exec kubia-rx2vs env
+       - DNS를 통한 서비스 검색
+       - FQDN을 통한 서비스 연결
+       - 파드의 컨테이너 내에서 셸 실행
+     
+     
+2. 클러스터 외부에 있는 서비스 연결  
+       
+       서비스 엔드포인트
+       kubectl describe svc kubia
+       Name:              kubia
+       Namespace:         default
+       Labels:            <none>
+       Annotations:       <none>
+       Selector:          app=kubia
+       Type:              ClusterIP
+       IP Family Policy:  SingleStack
+       IP Families:       IPv4
+       IP:                10.100.218.171
+       IPs:               10.100.218.171
+       Port:              http  80/TCP
+       TargetPort:        8080/TCP
+       Endpoints:         172.17.0.10:8080,172.17.0.8:8080,172.17.0.9:8080
+       Port:              https  90/TCP
+       TargetPort:        9090/TCP
+       Endpoints:         172.17.0.10:9090,172.17.0.8:9090,172.17.0.9:9090
+       Session Affinity:  None
+       Events:            <none>
+       
+       kubectl get endpoints kubia
+       NAME    ENDPOINTS                                                      AGE
+       kubia   172.17.0.10:9090,172.17.0.8:9090,172.17.0.9:9090 + 3 more...   10m
+       
+       
+       서비스는 파드에 직접 연결되지 않는다. 엔드포인트 리소스가 그 사이에 있다.
+       파드셀렉터는 서비스 스펙에 정의되어 있지만, 들어오는 연결을 전달할 때 직접 사용하지 않는다.
+       대신 셀렉터는 IP와 포트 목록을 작성하는데 사용되며 엔드포인트 리소스에 저장
+       클라이언트가 서비스에 연결하면
+       서비스 프록시는 이들 중 하나의 IP와 포트 쌍을 선택하고 들어온 연결을 대상 파드의 수신 대기 서버로 전달.
+       
+       
+       그래서 -> 서비스 엔드포인트는 수동으로 구성이 가능하다.
         
 
 3. 클러스터 외부에 있는 서비스 연결
