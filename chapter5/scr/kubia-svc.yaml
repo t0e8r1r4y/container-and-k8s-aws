@@ -6,5 +6,5 @@ spec:
   ports:
   - port: 90
     targetPort: 9090
-  seletor:
+  selector:
     app: kubia
