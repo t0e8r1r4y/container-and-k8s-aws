@@ -14,14 +14,14 @@
        클라이언트는 해당 IP와 포트로 접속한 다음 해당 서비스를 지원하는 파드 중 하나로 연결 된다.
        클라이언트는 서비스를 제공하는 개별 파드의 위치를 알 필요 없으므로, 이 파드는 언제든지 클러스터 안에서 이동할 수 있다.
        
-       
-![kube_service drawio](https://user-images.githubusercontent.com/91730236/157878478-be84aab6-6cf8-460e-b611-a41c064d110d.png)  
+<center><img src="https://user-images.githubusercontent.com/91730236/157878478-be84aab6-6cf8-460e-b611-a41c064d110d.png" width="700" height="350"></center>      
+
        
        
        서비스의 생성 -> 서비스 연결은 서비스 뒷단의 모든 파드로 로드밸런싱 된다.
        레이블 셀렉터는 어떤 파드가 서비스에 속하는지 정한다.
        
-![kube_service drawio (1)](https://user-images.githubusercontent.com/91730236/157879122-c8700e1a-9b59-4b11-88c0-5ea45d2d3aed.png).  
+<center><img src="https://user-images.githubusercontent.com/91730236/157879122-c8700e1a-9b59-4b11-88c0-5ea45d2d3aed.png" width="700" height="350"></center>
 
 
        kubectl expose로 서비스 생성 -> expose를 사용해서 레플리케이션컨트롤러를 노출하는데 사용
