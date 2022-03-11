@@ -182,7 +182,31 @@
 ![kube_service drawio (6)](https://user-images.githubusercontent.com/91730236/157897385-ff1e1e38-a54d-4f53-aaf5-648d3e093650.png)
 
 
-
+              minikube addons enable ingress
+                  ▪ Using image k8s.gcr.io/ingress-nginx/controller:v1.0.0-beta.3
+                  ▪ Using image k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.0
+                  ▪ Using image k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.0
+              🔎  Verifying ingress addon...
+              🌟  'ingress' 애드온이 활성화되었습니다
+       
+              kubectl get po --all-namespaces
+              NAMESPACE          NAME                                        READY   STATUS              RESTARTS        AGE
+              custom-namespace   kubia-manual                                1/1     Running             3 (3d ago)      5d2h
+              default            kubia-g2rk4                                 1/1     Running             0               73m
+              default            kubia-rx2vs                                 1/1     Running             0               73m
+              default            kubia-skffm                                 1/1     Running             0               73m
+              ingress-nginx      ingress-nginx-admission-create--1-slms7     0/1     Completed           0               8m9s
+              ingress-nginx      ingress-nginx-admission-patch--1-tnmz6      0/1     Completed           1               8m9s
+              ingress-nginx      ingress-nginx-controller-69bdbc4d57-7nhhz   1/1     Running             0               8m9s
+              istio-system       istio-ingressgateway-8dbb57f65-dkv28        0/1     ContainerCreating   0               125d
+              istio-system       istiod-7859559dd-tsq74                      0/1     Pending             0               125d
+              kube-system        coredns-78fcd69978-jvc8r                    1/1     Running             16 (3d ago)     161d
+              kube-system        etcd-minikube                               1/1     Running             17 (3d ago)     161d
+              kube-system        kube-apiserver-minikube                     1/1     Running             17 (3d ago)     161d
+              kube-system        kube-controller-manager-minikube            1/1     Running             17 (3d ago)     161d
+              kube-system        kube-proxy-tmfgd                            1/1     Running             16 (3d ago)     161d
+              kube-system        kube-scheduler-minikube                     1/1     Running             17 (3d ago)     161d
+              kube-system        storage-provisioner                         1/1     Running             45 (100m ago)   161d
 
 ------------------------------
 요약! ( 외부와 통신이 결정되는 부분 -> 제대로 학습 필요 )
