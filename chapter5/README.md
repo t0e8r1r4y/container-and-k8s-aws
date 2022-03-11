@@ -25,6 +25,35 @@
 
 
        kubectl expose로 서비스 생성 -> expose를 사용해서 레플리케이션컨트롤러를 노출하는데 사용
+       
+       src에서 kubia-svc.yaml create 후 get 조회  
+       
+       kubectl get svc
+       NAME               TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+       flink-jobmanager   ClusterIP      10.109.242.196   <none>        6123/TCP,6124/TCP,8081/TCP   61d
+       kubernetes         ClusterIP      10.96.0.1        <none>        443/TCP                      161d
+       kubia              ClusterIP      10.96.166.187    <none>        90/TCP                       10s
+       kubia-http         LoadBalancer   10.100.233.74    <pending>     9090:31813/TCP               9d
+       
+       
+       
+       클러스터 내에서 서비스 테스트
+       - 확실한 방법은 서비스의 클러스터 IP로 요청을 보내고 응답을 로그로 남기는 파드를 만드는 것.
+       - 그런 다음 파드의 로그를 검사해 서비스의 응답이 무엇인지 확인할 수 있다.
+       - 쿠버네티스 노드로 ssh로 접속하고 curl 명령을 실행 할 수 있다.
+       - kubectl exec 명령어로 기존 파드에서 curl 명령을 실행할 수 있다.
+       
+       kubectl exec kubia-kkhk9 -- curl -s http://10.96.166.187:90
+       You've hit kubia-tbg58
+       
+       동작순서
+![kube_service drawio (2)](https://user-images.githubusercontent.com/91730236/157883721-5c1aeb39-e18b-4583-a648-e6662f266832.png)
+
+       
+       서비스의 세션 어피니티 구성 : 특정 클라이언트의 모든 요청을 매번 같은 파드로 리디렉션 하려면 spec: 속성에서 sessionAffinity: ClientIP라고 설정
+       동일한 서비스에서 여러 개의 포트 노출 : 여러 포트가 있는 서비스를 만들 때는 각 포트의 이름을 지정해야 한다. 
+       이름이 지정된 포트를 사용할 수 있다.
+        
 
 3. 클러스터 외부에 있는 서비스 연결
 4. 외부 클라이언트에 서비스 노출
