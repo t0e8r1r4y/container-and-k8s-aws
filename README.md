@@ -40,7 +40,7 @@
 | Title | Author | LINK |
 | ------ | ------ | ------ |
 | Emerging Trends, Techniques and Open Issues of Containerization: A Review | JUNZO WATADA ,  ARUNAVA ROY,  RUTURAJ KADIKAR, HOANG PHAM,  BING XU | |
-| LXDs: Towards Isolation of Kernel Subsystems | Vikram Narayanan, University of California, Irvine; Abhiram Balasubramanian, Charlie Jacobsen, Sarah Spall, Scott Bauer, and Michael Quigley, University of Utah; Aftab Hussain, Abdullah Younis, Junjie Shen, Moinak Bhattacharyya, and Anton Burtsev, University of California, Irvine | |
+| LXDs: Towards Isolation of Kernel Subsystems | Vikram Narayanan, University of California, Irvine; Abhiram Balasubramanian, Charlie Jacobsen, Sarah Spall, Scott Bauer, and Michael Quigley, University of Utah; Aftab Hussain, Abdullah Younis, Junjie Shen, Moinak Bhattacharyya, and Anton Burtsev, University of California, Irvine | [링크][LXD_LINK] |
 | Multi-Kernel based Scalable Operating Sys-tem for Manycore Systems | Reprinted from S.-J. Cha et al | |
 
 
@@ -103,3 +103,4 @@
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
    [OCI_LINK]: <https://opencontainers.org/>
    [OCIGIT_LINK]: <https://github.com/opencontainers>
+   [LXD_LINK]: <https://www.usenix.org/conference/atc19/presentation/narayanan#:~:text=LXDs%20allow%20one%20to%20take,drivers%20in%20the%20Linux%20kernel.>
