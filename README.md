@@ -111,7 +111,7 @@
 #### 필요 개념 정리
 | Title | LINK | SUMMERY |
 | ------ | ------ | ------ |
-| Serverless | | 서버리스에 대한 개념 + Lamba & Serverless FrameWork |
+| Serverless | [링크][SERVERLESS_LINK] | 서버리스에 대한 개념 + Lamba & Serverless FrameWork |
                                                                                                                                    
 #### Product
 | Name | LINK | SUMMERY |
@@ -128,3 +128,4 @@
    [LXD_LINK]: <https://www.usenix.org/conference/atc19/presentation/narayanan#:~:text=LXDs%20allow%20one%20to%20take,drivers%20in%20the%20Linux%20kernel.>
    [MYTRANSLATE_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/ContainerizationReview.md>
    [CONTAINERVSVERTUALIZATION_LINK]: <https://medium.com/@tas.com/containerization%EA%B3%BC-vertualization-cloud%EC%99%80-on-premise-772b2cffcb80>
+   [SERVERLESS_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/AWS/Serverless.md>
