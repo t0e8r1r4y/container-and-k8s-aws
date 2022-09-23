@@ -32,15 +32,16 @@
     3. 성능 향상 : 위 두가지를 통해 속도의 최적화와 공간의 최적화에 도달한다.
     4. 결과적으로 운영 비용을 줄이고 유지보수를 용이하게하여 비용을 절감한다.
     5. 온프레미스 환경과 클라우드 환경 사이의 마이그레이션의 용이함. 시스템 변경에 유연하게 대처한다.
-    6. 반대급부는 고립화에 따른 자원공유 이슈, 보안이슈,
+    6. 반대급부는 고립화에 따른 자원공유 이슈, 보안이슈, 운영환경에 따른 성능이슈, 네트워크 복잡성 등이 있다.
+    7. 기존에 사용하던 VM 기술은 인스턴스를 띄우는데 오버헤드가 너무 크다.
 
 
 #### 읽어두면 도움 될 논문
-| Title | Author |   
-| ------ | ------ |  
-| Emerging Trends, Techniques and Open Issues of Containerization: A Review | JUNZO WATADA ,  ARUNAVA ROY,  RUTURAJ KADIKAR, HOANG PHAM,  BING XU |
-| LXDs: Towards Isolation of Kernel Subsystems | Vikram Narayanan, University of California, Irvine; Abhiram Balasubramanian, Charlie Jacobsen, Sarah Spall, Scott Bauer, and Michael Quigley, University of Utah; Aftab Hussain, Abdullah Younis, Junjie Shen, Moinak Bhattacharyya, and Anton Burtsev, University of California, Irvine |
-
+| Title | Author | LINK |
+| ------ | ------ | ------ |
+| Emerging Trends, Techniques and Open Issues of Containerization: A Review | JUNZO WATADA ,  ARUNAVA ROY,  RUTURAJ KADIKAR, HOANG PHAM,  BING XU | |
+| LXDs: Towards Isolation of Kernel Subsystems | Vikram Narayanan, University of California, Irvine; Abhiram Balasubramanian, Charlie Jacobsen, Sarah Spall, Scott Bauer, and Michael Quigley, University of Utah; Aftab Hussain, Abdullah Younis, Junjie Shen, Moinak Bhattacharyya, and Anton Burtsev, University of California, Irvine | |
+| Multi-Kernel based Scalable Operating Sys-tem for Manycore Systems | Reprinted from S.-J. Cha et al | |
 
 
 #### OCI ( Open Container Initiative )
@@ -51,7 +52,7 @@
 
 #### CRI ( Container Running Interface )
 | Title | LINK |   
-| ------ | ------ |  
+| ------ | ------ | 
 
 
 ---
