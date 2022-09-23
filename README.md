@@ -111,11 +111,12 @@
 #### 필요 개념 정리
 | Title | LINK | SUMMERY |
 | ------ | ------ | ------ |
-| Serverless | [링크][SERVERLESS_LINK] | 서버리스에 대한 개념 + Lamba & Serverless FrameWork |
+| Serverless | [링크][SERVERLESS_LINK] | 서버리스에 대한 개념 + Lambda & Serverless FrameWork |
                                                                                                                                    
 #### Product
 | Name | LINK | SUMMERY |
 | ------ | ------ | ------ |
+| Lambda | [LAMBDA_LINK] | 람다 프로덕트에 대한 요약 정리 |
 
 
 
@@ -129,3 +130,4 @@
    [MYTRANSLATE_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/ContainerizationReview.md>
    [CONTAINERVSVERTUALIZATION_LINK]: <https://medium.com/@tas.com/containerization%EA%B3%BC-vertualization-cloud%EC%99%80-on-premise-772b2cffcb80>
    [SERVERLESS_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/AWS/Serverless.md>
+   [LAMBDA_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/AWS/LAMDA.md>
