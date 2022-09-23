@@ -65,6 +65,6 @@
 **Thanks!**
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-   [AWSLAMDA_OFFICIAL_LINK]: <https://velog.io/@coalery/nest-injection-how](https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/invocation-eventsourcemapping.html>
+   [AWSLAMDA_OFFICIAL_LINK]: <https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/invocation-eventsourcemapping.html>
    [DANGGUN_LINK]: <https://medium.com/daangn/aws-lambda%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%8D%B8%EB%84%A4%EC%9D%BC-%EC%83%9D%EC%84%B1-%EA%B0%9C%EB%B0%9C-%ED%9B%84%EA%B8%B0-acc278d49980>
    [ROCKET_LINK]: <https://blog.rocketpunch.com/2017/07/02/2-million-pv-with-300-krw/>
