@@ -53,6 +53,13 @@
 #### CRI ( Container Running Interface )
 | Title | LINK |   
 | ------ | ------ | 
+                                                                                                                                   
+                                                                                                                                   
+#### 관련 자료 혹은 블로그 정리 글
+
+| Title | LINK | SUMMERY |
+| ------ | ------ | ------ |
+| Containerization과 Vertualization, Cloud와 On-premise | [내 블로그][CONTAINERVSVERTUALIZATION_LINK] | 클라우드 온프레미스 제품군 중 가상화와 컨테이너화 제품 구분 |
 
 
 ---
@@ -111,3 +118,4 @@
    [OCIGIT_LINK]: <https://github.com/opencontainers>
    [LXD_LINK]: <https://www.usenix.org/conference/atc19/presentation/narayanan#:~:text=LXDs%20allow%20one%20to%20take,drivers%20in%20the%20Linux%20kernel.>
    [MYTRANSLATE_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/ContainerizationReview.md>
+   [CONTAINERVSVERTUALIZATION_LINK]: <https://medium.com/@tas.com/containerization%EA%B3%BC-vertualization-cloud%EC%99%80-on-premise-772b2cffcb80>
