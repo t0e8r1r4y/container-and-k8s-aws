@@ -58,7 +58,8 @@
 ---
 ## 2. Docker 사용하기
 
-
+#### cheat sheet
+![DockerCheatSheet](https://user-images.githubusercontent.com/91730236/191916811-570bfc25-3a78-46a4-bd4b-b3fd554ec0c4.png)
 
 
 ---
@@ -67,7 +68,7 @@
     '쿠버네티스 인 액션즈' 책을 기반으로 필요한 오픈소스들을 구동하여 사용하고 필요한 내용들을 정리함. 기본 구성은 MacOS에서 minikube 환경에서 실행함.
 
 
-#### 치트
+#### cheat sheet
 ![Untitled (8)](https://user-images.githubusercontent.com/91730236/191912255-9851fd6c-49a3-4892-b529-fbb3ccb5fc09.png)
 
                                                                                                                                    
