@@ -36,7 +36,7 @@
 <br/>
 
 #### 2. 권한 설정
-- aws-cli가 설치되어 있지 않다면 설치
+- aws-cli가 설치되어 있지 않다면 [설치](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 ```
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"                                                                                   
 sudo installer -pkg AWSCLIV2.pkg -target /
