@@ -119,6 +119,7 @@
 | Lambda | [LAMBDA_LINK] | 람다 프로덕트에 대한 요약 정리 |
 | ECS | [ECS_LINK] | ECS에 대해 요약 정리 |
 | Fargate | | Fargate에 대해 요약 정리 |
+| ECR | [ECR_LINK] | ECR에 이미지(도커) 올리는 방법 정리 |
 
 
 
@@ -134,3 +135,4 @@
    [SERVERLESS_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/AWS/Serverless.md>
    [LAMBDA_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/AWS/LAMDA.md>
    [ECS_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/AWS/ECS.md>
+   [ECR_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s-aws/blob/main/AWS/ECR.md>
