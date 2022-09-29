@@ -120,6 +120,7 @@
 | ECS | [ECS_LINK] | ECS에 대해 요약 정리 |
 | Fargate | | Fargate에 대해 요약 정리 |
 | ECR | [ECR_LINK] | ECR에 이미지(도커) 올리는 방법 정리 |
+| Elastic Beanstalk | [EB_LINK] | 엘라스틱빈즈토크 사용 방법 정리 |
 
 
 
@@ -136,3 +137,4 @@
    [LAMBDA_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/AWS/LAMDA.md>
    [ECS_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s/blob/main/AWS/ECS.md>
    [ECR_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s-aws/blob/main/AWS/ECR.md>
+   [EB_LINK]: <https://github.com/t0e8r1r4y/container-and-k8s-aws/blob/main/AWS/EB.md>
