@@ -4,7 +4,8 @@
 - 사이드 프로젝트를 어떤 방식으로 배포를 해볼지 고민을 하다가 선택하였습니다. codepipeline과 함께 사용하면 배포가 편리하여 선택하였습니다.
 
 #### with Spring
-- 스프링 프로젝트를 배포합니다.
+- 스프링 프로젝트를 배포합니다. ( 내 사용 후기 )
+- [이동욱님 블로그](https://jojoldu.tistory.com/549)
 
 #### with NestJS
 - [Nest Js 프로젝트를 배포합니다.](https://github.com/t0e8r1r4y/container-and-k8s-aws/tree/main/AWS/Elastic_Beantalk_with_nestjs#readme)
